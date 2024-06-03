@@ -1,35 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ImageHeader from './components/ImageHeader'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [item, setItem] = useState<string[]>(['']);
 
-  return (
-    <>
-      <div>
-        <h1 className='bg-black text-3xl font-bold'>hai there</h1>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+  return ( 
+    <div className='h-[100vh] flex flex-col justify-center items-center'>
+      <ImageHeader />
+      
+      <div className='w-[350px]'>
+        <form className='mb-5'>
+          <input type="text"  className='w-full p-2 rounded-sm mb-2'/>
+          <button type='submit' className='bg-gray-700 w-full p-2 hover:opacity-80'>Add</button>
+        </form>
+        <div className=' h-52 overflow-y-auto'>  
+          <div className='h-12 flex justify-between items-center border border-slate-600 pl-2 mb-2 mr-1 py-2 overflow-auto'>
+            <p>js</p>
+            <button className='text-red-600'>
+              dlt
+            </button>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
