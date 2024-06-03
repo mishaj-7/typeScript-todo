@@ -1,6 +1,8 @@
+import { ReactSetState } from "./types/utils";
+
 type Input = {
     inputValue: string;
-    handleChange: React.Dispatch<React.SetStateAction<string>>;
+    handleChange: ReactSetState<string>;
     type:'text' | 'radio' | 'image' | 'color' | 'image' | 'file'
 };
 
